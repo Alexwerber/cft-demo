@@ -34,6 +34,7 @@ dependencies {
     final okHttp_version = '4.9.0'
     final liveData_version = '2.2.0'
     final refresh_version = '1.1.0'
+    final circleView_version = '3.1.0'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -48,6 +49,9 @@ dependencies {
 
     // Swipe refresh
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$refresh_version"
+
+    // Circle View
+    implementation "de.hdodenhof:circleimageview:$circleView_version"
 
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
