@@ -15,27 +15,27 @@ public class DailyExchangeRates {
     @SerializedName("Valute")
     private Map<String, ExchangeRate> valute;
 
-    public Date getDate() {
+    public Date getDate () {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate (Date date) {
         this.date = date;
     }
 
-    public Date getTimestamp() {
+    public Date getTimestamp () {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp (Date timestamp) {
         this.timestamp = timestamp;
     }
 
-    public Map<String, ExchangeRate> getValute() {
+    public Map<String, ExchangeRate> getValute () {
         return valute;
     }
 
-    public void setValute(Map<String, ExchangeRate> valute) {
+    public void setValute (Map<String, ExchangeRate> valute) {
         this.valute = valute;
     }
 }

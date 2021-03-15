@@ -20,17 +20,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ApiServiceProvider.getApiService()
-                .getDailyExchangeRates()
-                .enqueue(new Callback<DailyExchangeRates>() {
-            @Override
-            public void onResponse(Call<DailyExchangeRates> call, Response<DailyExchangeRates> response) {
+            .getDailyExchangeRates()
+            .enqueue(new Callback<DailyExchangeRates>() {
+                @Override
+                public void onResponse (Call<DailyExchangeRates> call, Response<DailyExchangeRates> response) {
 
-            }
+                }
 
-            @Override
-            public void onFailure(Call<DailyExchangeRates> call, Throwable t) {
+                @Override
+                public void onFailure (Call<DailyExchangeRates> call, Throwable t) {
 
-            }
-        });
+                }
+            });
     }
 }

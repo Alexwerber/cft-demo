@@ -23,7 +23,7 @@ public class RetrofitProvider {
         return okHttpClient.build();
     }
 
-    private static void initialize() {
+    private static void initialize () {
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -31,7 +31,7 @@ public class RetrofitProvider {
                 .build();
     }
 
-    public static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit () {
         if(mRetrofit == null) initialize();
 
         return mRetrofit;

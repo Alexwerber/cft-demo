@@ -18,43 +18,43 @@ public class ExchangeRate {
     @SerializedName("Previous")
     private Double previousValue;
 
-    public String getTrinket() {
+    public String getTrinket () {
         return trinket;
     }
 
-    public void setTrinket(String trinket) {
+    public void setTrinket (String trinket) {
         this.trinket = trinket;
     }
 
-    public Integer getNominal() {
+    public Integer getNominal () {
         return nominal;
     }
 
-    public void setNominal(int nominal) {
+    public void setNominal (int nominal) {
         this.nominal = nominal;
     }
 
-    public String getName() {
+    public String getName () {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName (String name) {
         this.name = name;
     }
 
-    public Double getValue() {
+    public Double getValue () {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue (Double value) {
         this.value = value;
     }
 
-    public Double getPreviousValue() {
+    public Double getPreviousValue () {
         return previousValue;
     }
 
-    public void setPreviousValue(double previousValue) {
+    public void setPreviousValue (double previousValue) {
         this.previousValue = previousValue;
     }
 }
