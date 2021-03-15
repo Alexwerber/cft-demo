@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.cft_demo_final"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,7 @@ dependencies {
 
     final retrofit_version = '2.9.0'
     final okHttp_version = '4.9.0'
+    final liveData_version = '2.2.0'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -39,6 +40,10 @@ dependencies {
 
     // OkHttp
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+
+    // Live Data
+    implementation "androidx.lifecycle:lifecycle-extensions:$liveData_version"
+    implementation "androidx.lifecycle:lifecycle-compiler:$liveData_version"
 
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
