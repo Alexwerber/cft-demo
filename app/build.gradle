@@ -33,6 +33,7 @@ dependencies {
     final retrofit_version = '2.9.0'
     final okHttp_version = '4.9.0'
     final liveData_version = '2.2.0'
+    final refresh_version = '1.1.0'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -44,6 +45,9 @@ dependencies {
     // Live Data
     implementation "androidx.lifecycle:lifecycle-extensions:$liveData_version"
     implementation "androidx.lifecycle:lifecycle-compiler:$liveData_version"
+
+    // Swipe refresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$refresh_version"
 
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
