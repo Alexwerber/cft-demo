@@ -56,8 +56,8 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder (@NonNull ExchangeRateAdapter.ViewHolder holder, int position) {
-        StringBuilder sb = new StringBuilder();
-        Formatter formatter = new Formatter(sb);
+        Formatter formatter = new Formatter();
+        Formatter formatterPercent = new Formatter();
 
         ExchangeRate rate = exchangeRates.get(position);
         // Представление вывода
@@ -70,8 +70,9 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
         // Вычисление процента увеличения/уменьшения стоимости валюты
         Double percent = rate.getValue() * 100 / rate.getPreviousValue() - 100;
         Double per =  Math.abs(Math.round(percent * 100.0) / 100.0);
+        formatterPercent.format("%.2f%%", per);
 
-        holder.currencyPercent.setText(per.toString());
+        holder.currencyPercent.setText(formatterPercent.toString());
 
         Resources res = context.getResources();
         // Вывод стрелочки

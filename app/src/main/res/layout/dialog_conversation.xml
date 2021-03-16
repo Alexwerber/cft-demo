@@ -20,7 +20,7 @@
             android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/dialog_currency_trinket"
+            android:id="@+id/dialog_currency_ticker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"

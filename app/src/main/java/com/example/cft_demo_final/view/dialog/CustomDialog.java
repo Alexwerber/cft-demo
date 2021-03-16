@@ -17,20 +17,18 @@ import com.example.cft_demo_final.R;
 import java.util.Formatter;
 
 public class CustomDialog extends DialogFragment {
-    private CharSequence trinket;
+    private CharSequence ticker;
     private Double value;
     private Integer nominal;
 
-    public CustomDialog (CharSequence trinket, Double value, Integer nominal) {
-        this.trinket = trinket;
+    public CustomDialog (CharSequence ticker, Double value, Integer nominal) {
+        this.ticker = ticker;
         this.value = value;
         this.nominal = nominal;
     }
 
     @Override
     public Dialog onCreateDialog (Bundle savedInstanceState) {
-        Double val = this.value;
-
         // Создаем билдер
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -39,7 +37,7 @@ public class CustomDialog extends DialogFragment {
 
         EditText sum = (EditText) viewCustom.findViewById(R.id.rate_sum);
         TextView resultSum = (TextView) viewCustom.findViewById(R.id.result_of_sum);
-        TextView trinketView = (TextView) viewCustom.findViewById(R.id.dialog_currency_trinket);
+        TextView tickerView = (TextView) viewCustom.findViewById(R.id.dialog_currency_ticker);
 
         builder.setView(viewCustom)
                 .setPositiveButton("Conversation", (dialog, id) -> {
@@ -64,8 +62,6 @@ public class CustomDialog extends DialogFragment {
             public void afterTextChanged (Editable s) {
                 String val = s.toString();
                 if(val.equals("")) {
-                    sum.setText("0");
-
                     resultSum.setText("0");
                 } else {
                     Formatter formatter = new Formatter();
@@ -79,7 +75,7 @@ public class CustomDialog extends DialogFragment {
                 }
             }
         });
-        trinketView.setText(trinket);
+        tickerView.setText(ticker);
         // Создаем AlertDialog и возвращаем его
         return builder.create();
     }
