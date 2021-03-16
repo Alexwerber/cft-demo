@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class ExchangeRate {
     @SerializedName("CharCode")
-    private String trinket;
+    private String ticker;
 
     @SerializedName("Nominal")
     private Integer nominal;
@@ -18,12 +18,12 @@ public class ExchangeRate {
     @SerializedName("Previous")
     private Double previousValue;
 
-    public String getTrinket () {
-        return trinket;
+    public String getTicker() {
+        return ticker;
     }
 
-    public void setTrinket (String trinket) {
-        this.trinket = trinket;
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
     }
 
     public Integer getNominal () {
