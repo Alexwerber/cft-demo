@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cft_demo_final.R;
 import com.example.cft_demo_final.data.entities.ExchangeRate;
+import com.example.cft_demo_final.view.dialog.CustomDialog;
 
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -93,6 +94,11 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
             holder.currencyFlag.setImageResource(R.drawable.flag_unknown);
         else holder.currencyFlag.setImageResource(id);
 
+        holder.root.setOnClickListener(v -> {
+            CustomDialog dialogCustom
+                    = new CustomDialog(rate.getTicker(), rate.getValue(), rate.getNominal());
+            dialogCustom.show(context.getSupportFragmentManager(), "DialogCustom");
+        });
     }
 
     @Override
@@ -106,9 +112,11 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
         final TextView currencyPercent;
         final ImageView currencyFlag;
         final ImageView currencyPercentArrow;
+        final View root;
 
         public ViewHolder(View view) {
             super(view);
+            root = view.findViewById(R.id.rate_root);
             currencyName = (TextView) view.findViewById(R.id.currency_name);
             currencyRate = (TextView) view.findViewById(R.id.currency_rate);
             currencyPercent = (TextView) view.findViewById(R.id.currency_percent);
