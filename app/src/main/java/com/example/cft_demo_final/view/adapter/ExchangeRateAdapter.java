@@ -1,7 +1,7 @@
 package com.example.cft_demo_final.view.adapter;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -53,7 +52,6 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
         return showValueName;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder (@NonNull ExchangeRateAdapter.ViewHolder holder, int position) {
@@ -65,7 +63,6 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
         String valueNameString = clampString(rate.getName());
         formatter.format("%.2f ₽ / %d %s", rate.getValue(), rate.getNominal(), rate.getTicker());
 
-
         holder.currencyName.setText(valueNameString);
         holder.currencyRate.setText(formatter.toString());
 
@@ -75,13 +72,14 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
 
         holder.currencyPercent.setText(per.toString());
 
+        Resources res = context.getResources();
         // Вывод стрелочки
         if (percent < 0) {
             holder.currencyPercentArrow.setImageResource(R.drawable.arrow_down);
-            holder.currencyPercent.setTextColor(context.getColor(R.color.decrease));
+            holder.currencyPercent.setTextColor(res.getColor(R.color.decrease));
         } else {
             holder.currencyPercentArrow.setImageResource(R.drawable.arrow_up);
-            holder.currencyPercent.setTextColor(context.getColor(R.color.increase));
+            holder.currencyPercent.setTextColor(res.getColor(R.color.increase));
         }
 
         // Поиск флагов соответствующих char code самой валюты
@@ -94,6 +92,7 @@ public class ExchangeRateAdapter extends RecyclerView.Adapter<ExchangeRateAdapte
         if (id == 0)
             holder.currencyFlag.setImageResource(R.drawable.flag_unknown);
         else holder.currencyFlag.setImageResource(id);
+
     }
 
     @Override
