@@ -40,7 +40,7 @@ public class CustomDialog extends DialogFragment {
         TextView tickerView = (TextView) viewCustom.findViewById(R.id.dialog_currency_ticker);
 
         builder.setView(viewCustom)
-                .setNegativeButton("Cancel", null);
+                .setNegativeButton("Отмена", null);
 
         sum.addTextChangedListener(new TextWatcher() {
             @Override

@@ -3,5 +3,5 @@
     <item
         android:id="@+id/menu_refresh"
         android:orderInCategory="1"
-        android:title="Refresh"/>
+        android:title="Обновить"/>
 </menu>
