@@ -1,7 +1,7 @@
 ### Данный проект содержит исходный код приложения для вывода ежедневных курсов валют и конвертации рублевой суммы в любую доступную валюту.
 
 
-[Требования к приложенияю](https://drive.google.com/file/d/122MrDCIUBKL6DkZHnSjbYOYP_6_Oy84K/view)
+[Требования к приложению](https://drive.google.com/file/d/122MrDCIUBKL6DkZHnSjbYOYP_6_Oy84K/view)
 
 Скриншоты:
 
